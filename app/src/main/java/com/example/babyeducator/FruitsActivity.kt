@@ -5,64 +5,67 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
-import kotlinx.android.synthetic.main.activity_fruits.*
+import com.example.babyeducator.databinding.ActivityFruitsBinding
 import java.util.*
 
 class FruitsActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
+    private lateinit var binding: ActivityFruitsBinding
     private var tts: TextToSpeech? = null // variable for text to speech
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fruits)
+//        setContentView(R.layout.activity_fruits)
+        binding = ActivityFruitsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        cardViewApple.setOnClickListener(){
-            tvApple.visibility = View.VISIBLE
+        binding.cardViewApple.setOnClickListener(){
+            binding.tvApple.visibility = View.VISIBLE
             speakOut("Apple")
         }
-        cardViewPomegranate.setOnClickListener(){
-            tvPomegranate.visibility = View.VISIBLE
+        binding.cardViewPomegranate.setOnClickListener(){
+            binding.tvPomegranate.visibility = View.VISIBLE
             speakOut("Pomegranate")
         }
-        cardViewBanana.setOnClickListener(){
-            tvBanana.visibility = View.VISIBLE
+        binding.cardViewBanana.setOnClickListener(){
+            binding.tvBanana.visibility = View.VISIBLE
             speakOut("Banana")
         }
-        cardViewBlueberries.setOnClickListener(){
-            tvBlueberries.visibility = View.VISIBLE
+        binding.cardViewBlueberries.setOnClickListener(){
+            binding.tvBlueberries.visibility = View.VISIBLE
             speakOut("Blue berries")
         }
-        cardViewGrapes.setOnClickListener(){
-            tvGrapes.visibility = View.VISIBLE
+        binding.cardViewGrapes.setOnClickListener(){
+            binding.tvGrapes.visibility = View.VISIBLE
             speakOut("Grapes")
         }
-        cardViewCalyxes.setOnClickListener(){
-            tvCalyxes.visibility = View.VISIBLE
+        binding.cardViewCalyxes.setOnClickListener(){
+            binding.tvCalyxes.visibility = View.VISIBLE
             speakOut("Calyxes")
         }
-        cardViewJackfruit.setOnClickListener(){
-            tvJackfruit.visibility = View.VISIBLE
+        binding.cardViewJackfruit.setOnClickListener(){
+            binding.tvJackfruit.visibility = View.VISIBLE
             speakOut("Jackfruit")
         }
-        cardViewLemon.setOnClickListener(){
-            tvLemon.visibility = View.VISIBLE
+        binding.cardViewLemon.setOnClickListener(){
+            binding.tvLemon.visibility = View.VISIBLE
             speakOut("Lemon")
         }
-        cardViewOrange.setOnClickListener(){
-            tvOrange.visibility = View.VISIBLE
+        binding.cardViewOrange.setOnClickListener(){
+            binding.tvOrange.visibility = View.VISIBLE
             speakOut("Orange")
         }
-        cardViewMango.setOnClickListener(){
-            tvMango.visibility = View.VISIBLE
+        binding.cardViewMango.setOnClickListener(){
+            binding.tvMango.visibility = View.VISIBLE
             speakOut("Mango")
         }
-        cardViewStrawberry.setOnClickListener(){
-            tvStrawberry.visibility = View.VISIBLE
+        binding.cardViewStrawberry.setOnClickListener(){
+            binding.tvStrawberry.visibility = View.VISIBLE
             speakOut("Straw berry")
         }
-        cardViewSweetcherries.setOnClickListener(){
+        binding.cardViewSweetcherries.setOnClickListener(){
             speakOut("Sweet cherries")
-            tvSweetcherries.visibility = View.VISIBLE
+            binding.tvSweetcherries.visibility = View.VISIBLE
         }
         // initialize the Text To Speech
         tts = TextToSpeech(this,this)

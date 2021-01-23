@@ -7,93 +7,97 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_letter.*
+import com.example.babyeducator.databinding.ActivityLetterBinding
 import java.util.*
 
 class LetterActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
+    //view binding using activity
+    private lateinit var binding: ActivityLetterBinding
 
     private var tts: TextToSpeech? = null // variable for text to speech
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_letter)
+//        setContentView(R.layout.activity_letter)
+        binding = ActivityLetterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         //creating on click which will enable letters to speak
-        btnA.setOnClickListener(){
+        binding.btnA.setOnClickListener(){
             speakOut("A")
         }
-        btnB.setOnClickListener(){
+        binding.btnB.setOnClickListener(){
             speakOut("B")
         }
-        btnC.setOnClickListener(){
+        binding.btnC.setOnClickListener(){
             speakOut("C")
         }
-        btnD.setOnClickListener(){
+        binding.btnD.setOnClickListener(){
             speakOut("D")
         }
-        btnE.setOnClickListener(){
+        binding.btnE.setOnClickListener(){
             speakOut("E")
         }
-        btnF.setOnClickListener(){
+        binding.btnF.setOnClickListener(){
             speakOut("F")
         }
-        btnG.setOnClickListener(){
+        binding.btnG.setOnClickListener(){
             speakOut("G")
         }
-        btnH.setOnClickListener(){
+        binding.btnH.setOnClickListener(){
             speakOut("H")
         }
-        btnI.setOnClickListener(){
+        binding.btnI.setOnClickListener(){
             speakOut("I")
         }
-        btnJ.setOnClickListener(){
+        binding.btnJ.setOnClickListener(){
             speakOut("J")
         }
-        btnK.setOnClickListener(){
+        binding.btnK.setOnClickListener(){
             speakOut("K")
         }
-        btnL.setOnClickListener(){
+        binding.btnL.setOnClickListener(){
             speakOut("L")
         }
-        btnM.setOnClickListener(){
+        binding.btnM.setOnClickListener(){
             speakOut("M")
         }
-        btnN.setOnClickListener(){
+        binding.btnN.setOnClickListener(){
             speakOut("N")
         }
-        btnO.setOnClickListener(){
+        binding.btnO.setOnClickListener(){
             speakOut("O")
         }
-        btnP.setOnClickListener(){
+        binding.btnP.setOnClickListener(){
             speakOut("P")
         }
-        btnQ.setOnClickListener(){
+        binding.btnQ.setOnClickListener(){
             speakOut("Q")
         }
-        btnR.setOnClickListener(){
+        binding.btnR.setOnClickListener(){
             speakOut("R")
         }
-        btnS.setOnClickListener(){
+        binding.btnS.setOnClickListener(){
             speakOut("S")
         }
-        btnT.setOnClickListener(){
+        binding.btnT.setOnClickListener(){
             speakOut("T")
         }
-        btnU.setOnClickListener(){
+        binding.btnU.setOnClickListener(){
             speakOut("U")
         }
-        btnV.setOnClickListener(){
+        binding.btnV.setOnClickListener(){
             speakOut("V")
         }
-        btnW.setOnClickListener(){
+        binding.btnW.setOnClickListener(){
             speakOut("W")
         }
-        btnX.setOnClickListener(){
+        binding.btnX.setOnClickListener(){
             speakOut("X")
         }
-        btnY.setOnClickListener(){
+        binding.btnY.setOnClickListener(){
             speakOut("Y")
         }
-        btnZ.setOnClickListener(){
+        binding.btnZ.setOnClickListener(){
             speakOut("Z")
         }
        // initialize the Text To Speech

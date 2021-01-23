@@ -6,11 +6,13 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
-import kotlinx.android.synthetic.main.activity_colors.*
+import com.example.babyeducator.databinding.ActivityColorsBinding
 import java.util.*
 
 class ColorsActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var tts: TextToSpeech? = null // variable for text to speech
+
+    private lateinit var binding: ActivityColorsBinding
 
    lateinit var view : View
     var sum : Int = 0
@@ -18,96 +20,98 @@ class ColorsActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_colors)
+//        setContentView(R.layout.activity_colors)
+        binding = ActivityColorsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        cardViewNumber.setOnClickListener(){
+        binding.cardViewNumber.setOnClickListener(){
             sum += 1
             if(sum == 1) {
-                cardViewNumber.setBackgroundResource(android.R.color.holo_green_light)
-                tvColorChanger.setText("Holo green")
+                binding.cardViewNumber.setBackgroundResource(android.R.color.holo_green_light)
+                binding.tvColorChanger.setText("Holo green")
                 speakOut("Holo green")
             }else if(sum == 2){
-                cardViewNumber.setBackgroundResource(android.R.color.black)
-                tvColorChanger.setText("Black")
-                tvColorChanger.setTextColor(R.color.white)
+                binding.cardViewNumber.setBackgroundResource(android.R.color.black)
+                binding.tvColorChanger.setText("Black")
+                binding.tvColorChanger.setTextColor(R.color.white)
                 speakOut("Black")
             }else if(sum == 3){
-                cardViewNumber.setBackgroundResource(android.R.color.darker_gray)
-                tvColorChanger.setText("Darker Gray")
+                binding.cardViewNumber.setBackgroundResource(android.R.color.darker_gray)
+                binding.tvColorChanger.setText("Darker Gray")
                 speakOut("Darker Gray")
             }else if(sum == 4){
-                cardViewNumber.setBackgroundResource(R.color.red)
-                tvColorChanger.setText("Red")
+                binding.cardViewNumber.setBackgroundResource(R.color.red)
+                binding.tvColorChanger.setText("Red")
                 speakOut("Red")
              }else if(sum == 5){
-                cardViewNumber.setBackgroundResource(R.color.Cyan)
-                tvColorChanger.setText("Cyan")
+                binding.cardViewNumber.setBackgroundResource(R.color.Cyan)
+                binding.tvColorChanger.setText("Cyan")
                 speakOut("Cyan")
             }else if(sum == 6){
-                cardViewNumber.setBackgroundResource(R.color.Blue)
-                tvColorChanger.setText("Blue")
+                binding.cardViewNumber.setBackgroundResource(R.color.Blue)
+                binding.tvColorChanger.setText("Blue")
                 speakOut("Blue")
-                tvColorChanger.setTextColor(R.color.white)
+                binding.tvColorChanger.setTextColor(R.color.white)
             }else if( sum == 7){
-                cardViewNumber.setBackgroundResource(R.color.DarkBlue)
-                tvColorChanger.setText("Dark Blue")
+                binding.cardViewNumber.setBackgroundResource(R.color.DarkBlue)
+                binding.tvColorChanger.setText("Dark Blue")
                 speakOut("Dark Blue")
-                tvColorChanger.setTextColor(R.color.white)
+                binding.tvColorChanger.setTextColor(R.color.white)
             }else if(sum == 8){
-                cardViewNumber.setBackgroundResource(R.color.LightBlue)
-                tvColorChanger.setText("Light Blue")
+                binding.cardViewNumber.setBackgroundResource(R.color.LightBlue)
+                binding.tvColorChanger.setText("Light Blue")
                 speakOut("Light Blue")
             }else if(sum == 9){
-                cardViewNumber.setBackgroundResource(R.color.Purple)
-                tvColorChanger.setText("Purple")
+                binding.cardViewNumber.setBackgroundResource(R.color.Purple)
+                binding.tvColorChanger.setText("Purple")
                 speakOut("Purple")
             }else if(sum == 10){
-                cardViewNumber.setBackgroundResource(R.color.Yellow)
-                tvColorChanger.setText("Yellow")
+                binding.cardViewNumber.setBackgroundResource(R.color.Yellow)
+                binding.tvColorChanger.setText("Yellow")
                 speakOut("Yellow")
             }else if(sum == 11){
-                cardViewNumber.setBackgroundResource(R.color.Lime)
-                tvColorChanger.setText("Lime")
+                binding.cardViewNumber.setBackgroundResource(R.color.Lime)
+                binding.tvColorChanger.setText("Lime")
                 speakOut("Lime")
             }else if(sum == 12){
-                cardViewNumber.setBackgroundResource(R.color.Magenta)
-                tvColorChanger.setText("Magenta")
+                binding.cardViewNumber.setBackgroundResource(R.color.Magenta)
+                binding.tvColorChanger.setText("Magenta")
                 speakOut("Magenta")
             }else if(sum == 13){
-                cardViewNumber.setBackgroundResource(R.color.white)
-                tvColorChanger.setText("White")
+                binding.cardViewNumber.setBackgroundResource(R.color.white)
+                binding.tvColorChanger.setText("White")
                 speakOut("White")
             }else if(sum == 14){
-                cardViewNumber.setBackgroundResource(R.color.Silvver)
-                tvColorChanger.setText("Silver")
+                binding.cardViewNumber.setBackgroundResource(R.color.Silvver)
+                binding.tvColorChanger.setText("Silver")
                 speakOut("Silver")
             }else if(sum == 15){
-                cardViewNumber.setBackgroundResource(android.R.color.holo_purple)
-                tvColorChanger.setText("Holo Purple")
+                binding.cardViewNumber.setBackgroundResource(android.R.color.holo_purple)
+                binding.tvColorChanger.setText("Holo Purple")
                 speakOut("Holo Purple")
             }else if(sum == 16){
-                cardViewNumber.setBackgroundResource(R.color.Gray)
-                tvColorChanger.setText("Gray")
+                binding.cardViewNumber.setBackgroundResource(R.color.Gray)
+                binding.tvColorChanger.setText("Gray")
                 speakOut("Gray")
             }else if(sum == 17){
-                cardViewNumber.setBackgroundResource(R.color.Orange)
-                tvColorChanger.setText("Orange")
+                binding.cardViewNumber.setBackgroundResource(R.color.Orange)
+                binding.tvColorChanger.setText("Orange")
                 speakOut("Orange")
             }else if(sum == 18){
-                cardViewNumber.setBackgroundResource(R.color.Maroon)
-                tvColorChanger.setText("Maroon")
+                binding.cardViewNumber.setBackgroundResource(R.color.Maroon)
+                binding.tvColorChanger.setText("Maroon")
                 speakOut("Maroon")
             }else if(sum == 19){
-                cardViewNumber.setBackgroundResource(R.color.Green)
-                tvColorChanger.setText("Green")
+                binding.cardViewNumber.setBackgroundResource(R.color.Green)
+                binding.tvColorChanger.setText("Green")
                 speakOut("Green")
             }else if( sum == 20){
-                cardViewNumber.setBackgroundResource(R.color.Olive)
-                tvColorChanger.setText("Olive")
+                binding.cardViewNumber.setBackgroundResource(R.color.Olive)
+                binding.tvColorChanger.setText("Olive")
                 speakOut("Olive")
             }else {
-                cardViewNumber.setBackgroundResource(android.R.color.holo_blue_light)
-                tvColorChanger.setText("Holo Blue")
+                binding.cardViewNumber.setBackgroundResource(android.R.color.holo_blue_light)
+                binding.tvColorChanger.setText("Holo Blue")
                 speakOut("Holo Blue")
 
                 sum = 0

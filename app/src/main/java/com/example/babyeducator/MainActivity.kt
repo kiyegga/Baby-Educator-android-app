@@ -3,31 +3,34 @@ package com.example.babyeducator
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.babyeducator.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+//        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 //       onclick Listener
-        cardViewNumber.setOnClickListener(){
+        binding.cardViewNumber.setOnClickListener(){
            startActivity(Intent(this, LetterActivity::class.java))
         }
-        cardViewCone.setOnClickListener(){
+        binding.cardViewCone.setOnClickListener(){
             startActivity(Intent(this, ShapesActivity::class.java))
         }
-        cardViewHeart.setOnClickListener(){
+        binding.cardViewHeart.setOnClickListener(){
             startActivity(Intent(this, ColorsActivity::class.java))
         }
-        cardViewOval.setOnClickListener(){
+        binding.cardViewOval.setOnClickListener(){
             startActivity(Intent(this, NumbersActivity::class.java))
         }
-        cardViewPolygon.setOnClickListener(){
+        binding.cardViewPolygon.setOnClickListener(){
             startActivity(Intent(this, FruitsActivity::class.java))
         }
-        cardViewRectangle.setOnClickListener(){
+        binding.cardViewRectangle.setOnClickListener(){
             startActivity(Intent(this, AnimalSoundActivity::class.java))
         }
     }

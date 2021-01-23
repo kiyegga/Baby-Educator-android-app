@@ -4,16 +4,21 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import kotlinx.android.synthetic.main.activity_animal_sound.*
+import com.example.babyeducator.databinding.ActivityAnimalSoundBinding
 
 class AnimalSoundActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityAnimalSoundBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_animal_sound)
+//        setContentView(R.layout.activity_animal_sound)
        // var mediaPlayer : MediaPlayer? = null
 
-        cardViewBaboon.setOnClickListener(){
+        binding = ActivityAnimalSoundBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.cardViewBaboon.setOnClickListener(){
 //            if(mediaPlayer!!.isPlaying){
 //                mediaPlayer?.stop()
 //            }else {
@@ -23,7 +28,7 @@ class AnimalSoundActivity : AppCompatActivity() {
               //  mediaPlayer = null
            // }
         }
-        cardViewBear.setOnClickListener(){
+        binding.cardViewBear.setOnClickListener(){
 //            if(mediaPlayer!!.isPlaying){
 //                mediaPlayer?.stop()
 //            }else {
@@ -33,44 +38,44 @@ class AnimalSoundActivity : AppCompatActivity() {
                // mediaPlayer = null
             //}
         }
-        cardViewCat.setOnClickListener(){
+        binding.cardViewCat.setOnClickListener(){
             var mediaPlayer : MediaPlayer? = MediaPlayer.create(this, R.raw.cat_sound)
             mediaPlayer?.start()
         }
 
-        cardViewChimpanzee.setOnClickListener(){
+        binding.cardViewChimpanzee.setOnClickListener(){
             var mediaPlayer : MediaPlayer? = MediaPlayer.create(this, R.raw.chimpanzee_sound)
             mediaPlayer?.start()
         }
-        cardViewCrocodile.setOnClickListener(){
+        binding.cardViewCrocodile.setOnClickListener(){
             var mediaPlayer : MediaPlayer? = MediaPlayer.create(this, R.raw.crocodile_sound)
             mediaPlayer?.start()
         }
-        cardViewDog.setOnClickListener(){
+        binding.cardViewDog.setOnClickListener(){
             var mediaPlayer : MediaPlayer? = MediaPlayer.create(this, R.raw.dog_sound)
             mediaPlayer?.start()
         }
-        cardViewElephant.setOnClickListener(){
+        binding.cardViewElephant.setOnClickListener(){
             var mediaPlayer : MediaPlayer? = MediaPlayer.create(this, R.raw.elephant_sound)
             mediaPlayer?.start()
         }
-        cardViewGorilla.setOnClickListener(){
+        binding.cardViewGorilla.setOnClickListener(){
             var mediaPlayer : MediaPlayer? = MediaPlayer.create(this, R.raw.gorilla_sound)
             mediaPlayer?.start()
         }
-        cardViewMonkey.setOnClickListener(){
+        binding.cardViewMonkey.setOnClickListener(){
             var mediaPlayer : MediaPlayer? = MediaPlayer.create(this, R.raw.monkey_sound)
             mediaPlayer?.start()
         }
-        cardViewLion.setOnClickListener(){
+        binding.cardViewLion.setOnClickListener(){
             var mediaPlayer : MediaPlayer? = MediaPlayer.create(this, R.raw.lion_sound)
             mediaPlayer?.start()
         }
-        cardViewSnake.setOnClickListener(){
+        binding.cardViewSnake.setOnClickListener(){
             var mediaPlayer : MediaPlayer? = MediaPlayer.create(this, R.raw.snake_sound)
             mediaPlayer?.start()
         }
-        cardViewTiger.setOnClickListener(){
+        binding.cardViewTiger.setOnClickListener(){
             var mediaPlayer : MediaPlayer? = MediaPlayer.create(this, R.raw.tiger_sound)
             mediaPlayer?.start()
         }

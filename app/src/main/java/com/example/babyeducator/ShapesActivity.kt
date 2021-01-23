@@ -5,64 +5,67 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
-import kotlinx.android.synthetic.main.activity_shapes.*
+import com.example.babyeducator.databinding.ActivityShapesBinding
 import java.util.*
 
 class ShapesActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
+    private lateinit var binding: ActivityShapesBinding
 
     private var tts: TextToSpeech? = null // variable for text to speech
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_shapes)
+//        setContentView(R.layout.activity_shapes)
+        binding = ActivityShapesBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        cardViewNumber.setOnClickListener(){
+        binding.cardViewNumber.setOnClickListener(){
             speakOut("Circle")
-            tvCircle.visibility = View.VISIBLE
+            binding.tvCircle.visibility = View.VISIBLE
         }
-        cardViewCone.setOnClickListener(){
+        binding.cardViewCone.setOnClickListener(){
             speakOut("Cone")
-            tvCone.visibility = View.VISIBLE
+            binding.tvCone.visibility = View.VISIBLE
         }
-        cardViewCylinder.setOnClickListener(){
+        binding.cardViewCylinder.setOnClickListener(){
             speakOut("Cylinder")
-            tvCylinder.visibility = View.VISIBLE
+            binding.tvCylinder.visibility = View.VISIBLE
         }
-        cardViewHeart.setOnClickListener(){
+        binding.cardViewHeart.setOnClickListener(){
             speakOut("Heart")
-            tvHeart.visibility = View.VISIBLE
+            binding.tvHeart.visibility = View.VISIBLE
         }
-        cardViewOval.setOnClickListener(){
+        binding.cardViewOval.setOnClickListener(){
             speakOut("Oval")
-            tvOval.visibility = View.VISIBLE
+            binding.tvOval.visibility = View.VISIBLE
         }
-        cardViewMoon.setOnClickListener(){
+        binding.cardViewMoon.setOnClickListener(){
             speakOut("Moon")
-            tvMoon.visibility = View.VISIBLE
+            binding.tvMoon.visibility = View.VISIBLE
         }
-        cardViewPolygon.setOnClickListener(){
+        binding.cardViewPolygon.setOnClickListener(){
             speakOut("Polygon")
-            tvPolygon.visibility = View.VISIBLE
+            binding.tvPolygon.visibility = View.VISIBLE
         }
-        cardViewRectangle.setOnClickListener(){
+        binding.cardViewRectangle.setOnClickListener(){
             speakOut("Rectangle")
-            tvRectangle.visibility = View.VISIBLE
+            binding.tvRectangle.visibility = View.VISIBLE
         }
-        cardViewSquare.setOnClickListener(){
+        binding.cardViewSquare.setOnClickListener(){
             speakOut("Square")
-            tvSquare.visibility = View.VISIBLE
+            binding.tvSquare.visibility = View.VISIBLE
         }
-        cardViewPyramind.setOnClickListener(){
+        binding.cardViewPyramind.setOnClickListener(){
             speakOut("Pyramind")
-            tvPyramid.visibility = View.VISIBLE
+            binding.tvPyramid.visibility = View.VISIBLE
         }
-        cardViewStar.setOnClickListener(){
+        binding.cardViewStar.setOnClickListener(){
             speakOut("Star")
-            tvStar.visibility = View.VISIBLE
+            binding.tvStar.visibility = View.VISIBLE
         }
-        cardViewTriangle.setOnClickListener(){
+        binding.cardViewTriangle.setOnClickListener(){
             speakOut("Triangle")
-            tvTriangle.visibility = View.VISIBLE
+            binding.tvTriangle.visibility = View.VISIBLE
         }
 
         // initialize the Text To Speech

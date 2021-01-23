@@ -5,22 +5,23 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
-import kotlinx.android.synthetic.main.activity_numbers.*
-import kotlinx.android.synthetic.main.activity_numbers.cardViewNumber
+import com.example.babyeducator.databinding.ActivityNumbersBinding
 import java.util.*
 
 class NumbersActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
+    private lateinit var binding: ActivityNumbersBinding
     private var tts: TextToSpeech? = null // variable for text to speech
     lateinit var view : View
     var sum : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_numbers)
-
-      cardViewNumber.setOnClickListener(){
+//        setContentView(R.layout.activity_numbers)
+        binding = ActivityNumbersBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+       binding.cardViewNumber.setOnClickListener(){
           sum += 1
-          tvNumber.setText(sum.toString())
+           binding.tvNumber.setText(sum.toString())
           speakOut(sum.toString())
           //tvNumberInWords.visibility = View.VISIBLE
          // var convertToWord = EnglishNumbersToWord()
